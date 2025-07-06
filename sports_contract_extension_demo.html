@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yannik Sinner x Nike Sponsorship Contract - Google Docs Sim</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f7f7f7;
+      height: 100vh;
+      display: flex;
+    }
+    #doc-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f7f7f7;
+      min-width: 0;
+      height: 100vh;
+    }
+    /* Google Docs-like UI */
+    #menu-bar {
+      width: 100vw;
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      height: 48px;
+      box-sizing: border-box;
+      font-size: 15px;
+      color: #444;
+      gap: 24px;
+    }
+    #menu-bar .menu {
+      margin-right: 18px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    #doc-title-bar {
+      width: 70vw;
+      min-width: 600px;
+      max-width: 900px;
+      display: flex;
+      align-items: center;
+      margin: 24px 0 0 0;
+      gap: 16px;
+    }
+    #doc-title {
+      font-size: 1.3em;
+      font-weight: 500;
+      color: #222;
+      margin-right: 12px;
+    }
+    #toolbar {
+      width: 70vw;
+      min-width: 600px;
+      max-width: 900px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px 6px 0 0;
+      display: flex;
+      align-items: center;
+      padding: 6px 16px;
+      gap: 12px;
+      margin-bottom: 0;
+      margin-top: 8px;
+      font-size: 15px;
+    }
+    #toolbar select, #toolbar button {
+      margin-right: 8px;
+      font-size: 15px;
+      border: 1px solid #e0e0e0;
+      border-radius: 3px;
+      background: #fafafa;
+      padding: 2px 8px;
+    }
+    #ruler {
+      width: 70vw;
+      min-width: 600px;
+      max-width: 900px;
+      height: 18px;
+      background: #f3f3f3;
+      border-left: 1px solid #e0e0e0;
+      border-right: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 0;
+      display: flex;
+      align-items: flex-end;
+      font-size: 11px;
+      color: #aaa;
+      padding-left: 32px;
+      letter-spacing: 2px;
+    }
+    #google-doc {
+      width: 70vw;
+      min-width: 600px;
+      max-width: 900px;
+      min-height: 70vh;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      padding: 32px 40px;
+      font-size: 1.08em;
+      outline: none;
+      margin-bottom: 30px;
+      overflow-y: auto;
+      line-height: 1.7;
+    }
+    .highlight {
+      background: #fff9c4;
+    }
+    .signature {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 1.2em;
+      color: #444;
+    }
+    /* Extension popup */
+    #extension-popup {
+      position: fixed;
+      top: 80px;
+      right: 40px;
+      width: 370px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      z-index: 9999;
+      padding: 20px;
+    }
+    #extension-popup h2 {
+      margin-top: 0;
+      font-size: 1.2em;
+      color: #1a73e8;
+    }
+    .section {
+      margin-bottom: 12px;
+    }
+    .btn {
+      background: #1a73e8;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 14px;
+      cursor: pointer;
+      margin-top: 8px;
+      margin-right: 6px;
+    }
+    .btn:hover {
+      background: #155ab6;
+    }
+    .suggestion, .error-detail {
+      background: #e8f0fe;
+      border-left: 3px solid #1a73e8;
+      padding: 8px;
+      margin-bottom: 8px;
+      font-size: 0.97em;
+    }
+    .error-detail {
+      background: #ffe0e0;
+      border-left: 3px solid #e53935;
+    }
+    .example {
+      font-size: 0.95em;
+      color: #555;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+    .error-title {
+      font-weight: bold;
+      color: #e53935;
+    }
+  </style>
+</head>
+<body>
+  <div id="doc-container">
+    <div id="menu-bar">
+      <span class="menu">File</span>
+      <span class="menu">Edit</span>
+      <span class="menu">View</span>
+      <span class="menu">Insert</span>
+      <span class="menu">Format</span>
+      <span class="menu">Tools</span>
+      <span class="menu">Extensions</span>
+      <span class="menu">Help</span>
+    </div>
+    <div id="doc-title-bar">
+      <span id="doc-title">Yannik Sinner x Nike Sponsorship Contract</span>
+      <span style="color:#888;font-size:0.95em;">Last edit was seconds ago</span>
+    </div>
+    <div id="toolbar">
+      <select>
+        <option>Normal text</option>
+        <option>Title</option>
+        <option>Heading 1</option>
+        <option>Heading 2</option>
+      </select>
+      <button>B</button>
+      <button>I</button>
+      <button>U</button>
+      <button>🔗</button>
+      <button>🖉</button>
+      <button>🖨️</button>
+      <span style="margin-left:20px;color:#aaa;">100%</span>
+      <span style="margin-left:20px;color:#aaa;">Times New Roman</span>
+      <span style="margin-left:20px;color:#aaa;">18</span>
+    </div>
+    <div id="ruler">
+      <span style="margin-right: 20px;">0</span>
+      <span style="margin-right: 40px;">1</span>
+      <span style="margin-right: 40px;">2</span>
+      <span style="margin-right: 40px;">3</span>
+      <span style="margin-right: 40px;">4</span>
+      <span style="margin-right: 40px;">5</span>
+      <span style="margin-right: 40px;">6</span>
+      <span style="margin-right: 40px;">7</span>
+      <span style="margin-right: 40px;">8</span>
+      <span style="margin-right: 40px;">9</span>
+    </div>
+    <div id="google-doc" contenteditable="true">
+      <b>SPONSORSHIP AGREEMENT</b><br><br>
+      <b>Parties:</b> This Sponsorship Agreement ("Agreement") is made and entered into as of <span class="highlight">[Effective Date]</span> by and between <b>Nike, Inc.</b> ("Sponsor"), and <b>Yannik Sinner</b> ("Athlete").<br><br>
+      <b>Term:</b> The term of this Agreement shall commence on <span class="highlight">[Start Date]</span> and continue until <span class="highlight">[End Date]</span> unless terminated earlier in accordance with this Agreement.<br><br>
+      <b>Compensation:</b> Athlete shall receive an annual sponsorship fee of <span class="highlight">[Amount]</span> USD, payable in equal quarterly installments. Athlete is also eligible for performance bonuses as outlined in Exhibit A.<br><br>
+      <b>Deliverables:</b> Athlete agrees to wear Nike-branded apparel and footwear during all professional matches, participate in up to 6 Nike promotional events per year, and provide up to 10 social media posts annually featuring Nike products.<br><br>
+      <b>Exclusivity:</b> Athlete shall not endorse, promote, or wear any competing sportswear brands during the term of this Agreement.<br><br>
+      <b>Image Rights:</b> Sponsor is granted the right to use Athlete's name, image, and likeness in marketing and promotional materials worldwide during the term.<br><br>
+      <b>Termination:</b> Either party may terminate this Agreement with 30 days written notice. In the event of material breach, the non-breaching party may terminate immediately.<br><br>
+      <b>Dispute Resolution:</b> Any disputes arising under this Agreement shall be resolved by binding arbitration in New York, NY.<br><br>
+      <b>Signatures:</b><br><br>
+      <div style="display:flex;align-items:center;gap:40px;">
+        <div>
+          ___________________________<br>
+          <span class="signature" id="athlete-signature">[Yannik Sinner]</span><br>
+          Athlete
+        </div>
+        <div>
+          ___________________________<br>
+          <span class="signature" id="sponsor-signature">[Nike Representative]</span><br>
+          Sponsor
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="extension-popup">
+    <div id="ext-content"></div>
+  </div>
+  <script>
+    // --- State ---
+    let extState = {
+      view: 'landing', // landing, analyze, summary, signature, clause, export, settings
+      errors: [],
+      summary: '',
+    };
+
+    // --- UI Rendering ---
+    function renderExtension() {
+      const ext = document.getElementById('ext-content');
+      if (extState.view === 'landing') {
+        ext.innerHTML = `
+          <h2>Sports Contract Assistant</h2>
+          <div style="margin-bottom:16px;">Welcome! What would you like to do?</div>
+          <button class="btn" onclick="setExtView('analyze')">Start Analyzing Errors</button>
+          <button class="btn" onclick="setExtView('summary')">Summarize Contract</button>
+          <button class="btn" onclick="setExtView('signature')">Auto-Fill Signatures</button>
+          <button class="btn" onclick="setExtView('clause')">Insert Best Practice Clause</button>
+          <button class="btn" onclick="setExtView('export')">Export as PDF</button>
+          <button class="btn" onclick="setExtView('settings')">Settings</button>
+        `;
+      } else if (extState.view === 'analyze') {
+        renderAnalyzeView(ext);
+      } else if (extState.view === 'summary') {
+        renderSummaryView(ext);
+      } else if (extState.view === 'signature') {
+        renderSignatureView(ext);
+      } else if (extState.view === 'clause') {
+        ext.innerHTML = `
+          <h2>Insert Clause</h2>
+          <div>Coming soon: Choose a clause to insert into your contract.</div>
+          <button class="btn" onclick="setExtView('landing')">Back</button>
+        `;
+      } else if (extState.view === 'export') {
+        ext.innerHTML = `
+          <h2>Export as PDF</h2>
+          <div>Coming soon: Export your contract as a PDF.</div>
+          <button class="btn" onclick="setExtView('landing')">Back</button>
+        `;
+      } else if (extState.view === 'settings') {
+        ext.innerHTML = `
+          <h2>Settings</h2>
+          <div>Coming soon: Set your default names, company, and preferences.</div>
+          <button class="btn" onclick="setExtView('landing')">Back</button>
+        `;
+      }
+    }
+
+    function setExtView(view) {
+      extState.view = view;
+      renderExtension();
+      if (view === 'analyze') analyzeContract();
+      if (view === 'summary') summarizeContract();
+    }
+
+    // --- Analyze Errors View ---
+    function renderAnalyzeView(ext) {
+      let html = `<h2>Error Analysis</h2>`;
+      if (extState.errors.length === 0) {
+        html += `<div style='color:green;margin-bottom:12px;'>No major issues detected! 🎉</div>`;
+      } else {
+        html += `<div style='margin-bottom:12px;'>Potential Issues Detected:</div>`;
+        extState.errors.forEach((err, i) => {
+          html += `<div class='error-detail'><div class='error-title'>${err.title}</div>${err.detail}<div class='example'><b>Example:</b> ${err.example}</div><button class='btn' onclick='fixError(${i})'>Fix</button></div>`;
+        });
+      }
+      html += `<button class="btn" onclick="setExtView('landing')">Back</button>`;
+      ext.innerHTML = html;
+    }
+
+    // --- Summarize Contract View ---
+    function renderSummaryView(ext) {
+      let html = `<h2>Contract Summary</h2>`;
+      if (extState.summary) {
+        html += `<div style='margin-bottom:12px;'>${extState.summary}</div>`;
+        html += `<button class='btn' onclick='insertSummary()'>Insert Summary at Top</button>`;
+      } else {
+        html += `<div>Generating summary...</div>`;
+      }
+      html += `<button class="btn" onclick="setExtView('landing')">Back</button>`;
+      ext.innerHTML = html;
+    }
+
+    // --- Signature Fill View ---
+    function renderSignatureView(ext) {
+      ext.innerHTML = `
+        <h2>Auto-Fill Signatures</h2>
+        <div style='margin-bottom:12px;'>Click below to fill in signature fields with realistic names.</div>
+        <button class='btn' onclick='autoFillSignatures()'>Auto-Fill Now</button>
+        <button class="btn" onclick="setExtView('landing')">Back</button>
+      `;
+    }
+
+    // --- Error Analysis Logic ---
+    function analyzeContract() {
+      const doc = document.getElementById('google-doc').innerText;
+      let errors = [];
+      if (!doc.toLowerCase().includes('morality')) {
+        errors.push({
+          title: "Missing Morality Clause",
+          detail: "No clause found allowing Sponsor to terminate for reputational harm. This is standard in athlete sponsorships.",
+          example: '\"Sponsor may terminate this Agreement if Athlete engages in conduct that brings disrepute to Sponsor\'s brand.\"'
+        });
+      }
+      if (doc.includes('[Amount]')) {
+        errors.push({
+          title: "Ambiguous Compensation",
+          detail: "Compensation amount is not specified. Replace [Amount] with a specific number.",
+          example: '\"Athlete shall receive an annual sponsorship fee of $1,000,000 USD...\"'
+        });
+      }
+      if (doc.includes('[Start Date]') || doc.includes('[End Date]')) {
+        errors.push({
+          title: "Missing Dates",
+          detail: "Start or end date is not specified. Replace placeholders with actual dates.",
+          example: '\"...commence on January 1, 2024 and continue until December 31, 2026...\"'
+        });
+      }
+      if (!doc.toLowerCase().includes('performance bonus')) {
+        errors.push({
+          title: "No Performance Bonus Clause",
+          detail: "No clause found specifying bonuses for athletic achievements. Consider adding one.",
+          example: '\"Athlete shall receive a bonus of $50,000 for each Grand Slam tournament won...\"'
+        });
+      }
+      if (!doc.toLowerCase().includes('arbitration')) {
+        errors.push({
+          title: "No Arbitration Clause",
+          detail: "No clause found specifying arbitration for dispute resolution. This is standard for international contracts.",
+          example: '\"Any disputes arising under this Agreement shall be resolved by binding arbitration in New York, NY.\"'
+        });
+      }
+      extState.errors = errors;
+      renderExtension();
+    }
+
+    function fixError(idx) {
+      // For demo, just insert the example clause at the end
+      const err = extState.errors[idx];
+      const doc = document.getElementById('google-doc');
+      const el = document.createElement('div');
+      el.innerHTML = `<b>${err.title.replace('Missing ', '')}:</b> ${err.example.replace(/\\"/g, '"')}<br><br>`;
+      doc.appendChild(el);
+      extState.errors.splice(idx, 1);
+      renderExtension();
+    }
+
+    // --- Summarization Logic ---
+    function summarizeContract() {
+      const doc = document.getElementById('google-doc').innerText;
+      // Simple summary logic for demo
+      let summary = '';
+      const parties = /between (.+?) \("Sponsor"\), and (.+?) \("Athlete"\)/.exec(doc);
+      const term = /commence on (.+?) and continue until (.+?)(\.| unless)/.exec(doc);
+      const comp = /annual sponsorship fee of (.+?) USD/.exec(doc);
+      if (parties && term && comp) {
+        summary = `${parties[2]} will represent ${parties[1]} from ${term[1]} to ${term[2]}, earning ${comp[1]} per year.`;
+      } else {
+        summary = 'Unable to generate summary. Please ensure contract has Parties, Term, and Compensation.';
+      }
+      extState.summary = summary;
+      renderExtension();
+    }
+    function insertSummary() {
+      const doc = document.getElementById('google-doc');
+      const summaryDiv = document.createElement('div');
+      summaryDiv.innerHTML = `<b>Summary:</b> ${extState.summary}<br><br>`;
+      doc.insertBefore(summaryDiv, doc.firstChild);
+      alert('Summary inserted at top!');
+    }
+
+    // --- Signature Fill Logic ---
+    function autoFillSignatures() {
+      document.getElementById('athlete-signature').textContent = 'Yannik Sinner';
+      document.getElementById('sponsor-signature').textContent = 'Maria Lopez';
+      alert('Signatures auto-filled!');
+    }
+
+    // --- Initial Render ---
+    renderExtension();
+  </script>
+</body>
+</html> 
